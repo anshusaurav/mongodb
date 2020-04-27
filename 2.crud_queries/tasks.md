@@ -1,18 +1,55 @@
 1. Create a database named `blog`.
 
+
+```js
+use blog   
+```
+
 2. Create a collection called 'articles'.
+
+```js
+db.createCollection('articles')
+```
 
 3. Insert multiple documents(at least 3) into articles. It should have fields
 
+```js
+db.articles.insertMany([
+{"title": "Views in Express", "text": "Express builds up the context object every time you call render", "author": "Anshu Saurabh"},
+
+{"title": "Persisting your data with MongoDB", "text": "You could store your application’s data in memory, by setting variables", "author": "Anshu Saurabh"},
+
+{"title": "Testing Express applications", "text": "Writing reliable code can be difficult. Even small software can be too complex for one person.", "author": "Anshu Saurabh"}])
+
+```js
+
 4. Find all the articles using `db.COLLECTION_NAME.find()`
+
+```js
+db.articles.find().pretty()
+```
 
 5. Find a document using _id field.
 
+```js
+db.articles.find({ _id: ObjectId("5ea737722b228c3453c72972")});
+
+```
 6. Find documents using title and author's name field.
+
+```js
+db.articles.find({ author: "Anshu Saurabh", title:"Persisting your data with MongoDB"});
+```
 
 7. Find document using a specific tag.
 
+```js
+db.articles.find({ tags: {$in: ["mongodb", "SQL"] } });
+```
+
 8. Update title of a document using its _id field.
+
+
 
 9. Update a author's name using article's title.
 
