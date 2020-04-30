@@ -1,17 +1,18 @@
 #### write commands for following mongodb opertaions
 
 1. create a database named `sports`
-// Answer here ..
+
 ```js
  use sports
 
 ```
 2. list all databases present in local mongod server.
-// Answer here..
-``js
+
+```js
  db
 ```
 3. create 3 collections named `cricket`, `football`, `TT` in sports database.
+
 ```js
  db.createCollection('cricket');
  db.createCollection('football')
@@ -32,12 +33,15 @@ db.football.insertMany([{'name': 'Apporv','age': 22, 'email': 'apoorvtiwary@gmai
 db.TT.insertMany([{'name': 'Mayank','age': 24, 'email': 'max007@gmail.com'},
 {'name': 'Sunny','age': 23, 'email': 'itzsunny@gmail.com'},
 {'name': 'Akshat','age': 26, 'email': 'akshatspeaks@gmail.com'}]);
+
 ```
 
-5. list all collections in sports database.
+5. list all collections in sports database
+
 ```js
 show collections
 ```
+
 6. rename `TT` collection to `tennis`.
 
 ```js
@@ -55,7 +59,8 @@ db.khokho.insertMany([{'name': 'Naveen','age': 24, 'email': 'naveemchinnodu@gmai
 {'name': 'Ved','age': 26, 'email': 'vedbro@gmail.com'},
 {'name': 'Akshay','age': 26, 'email': 'puplleboi@gmail.com'}]);
 ```
-```Text
+
+```text
   {
         "acknowledged" : true,
         "insertedIds" : [
