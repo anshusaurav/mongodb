@@ -69,11 +69,24 @@ db.articles.updateMany( {}, { $rename: { "text": "description" } } )
 
 11. Add additional tag in a specific document.
 
+```js
+db.articles.update({"title":"Testing Express applications"}, {$push: {tags: "tutorial"}});
+```
+
 12. Update an article's tags using $set and without $set.
   - Write the differences here ?
+  
+```js
+//Set will update whole content of tags array whereas push will just add one element to array field of document
+db.articles.update({"title":"Testing Express applications"}, {$set: {tags: ["database", "tutorial"}});
+db.articles.update({"title":"Testing Express applications"}, {$push: {tags: ["database",}});
+```
 
 13. Increment an auhtor's age by 5.  
 
+```js
+db.articles.update({"title":"Testing Express applications"}, {$inc: {"author.age": 5}})
+```
 14. Delete a document using _id field with `db.COLLECTION_NAME.remove()`.
 
 ```js
