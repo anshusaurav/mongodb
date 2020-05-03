@@ -110,24 +110,26 @@ db.COLLECTION_NAME.find({sports: { $in: ['khokho'] }});
 ```
 5. Comparison
   - Using $gt or any other operator
+
   ```js
-  // Retuns document where one element can satisfy the first condition and another 
-  // element can satisfy the other condition, or a single element can satisfy both
   find({ scores: { $gt: 15, $lt: 20 } });
   ```
   - $elemMatch operator
     - Use $elemMatch operator to specify multiple criteria on the elements of an array such that at least one array element satisfies all the specified criteria.
+
     ```js
     // returns document if any element from scores array lies in between 22 and 30
     find({ scores : { $elemMatch: { $gt: 22, $lt: 30 } } });
     ```
     - querying array Indexes
       - query conditions for an element at a particular index or position of the array.
+
     ```js
     find({ 'scores.1': { $gt: 25 } });
     ```
     - query array by number of elements
       - Use the $size operator to query for arrays by number of elements.
+
     ```js
     find({ scores: { $size: 3 }})
     ```
