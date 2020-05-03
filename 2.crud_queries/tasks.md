@@ -98,7 +98,7 @@ Use sample.js data for below queries.
 1. Find all males who play cricket.
 
 ```js
-db.users.find({"gender": "Male"}, {"sports": { $in: ["cricket"] }}).pretty()
+db.users.find({"gender": "Male", "sports": "cricket"}).pretty()
 ```
 
 2. Update user with extra golf field in sports array whose name is "Steve Ortega".

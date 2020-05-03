@@ -9,7 +9,7 @@
 2. list all databases present in local mongod server.
 
 ```js
- db
+ show dbs
 ```
 3. create 3 collections named `cricket`, `football`, `TT` in sports database.
 
